@@ -43,18 +43,14 @@ public class Game {
         }
     }
 
-    // TODO-later: The return value of method Game.add() is not used.
-    public boolean add(String playerName) {
-
-
+    public void add(String playerName) {
         players.add(playerName);
         places[howManyPlayers()] = 0;
         purses[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
 
-        System.out.println(playerName + " was added");
-        System.out.println("They are player number " + players.size());
-        return true;
+        logger.info(playerName + " was added");
+        logger.info("They are player number " + players.size());
     }
 
     private int howManyPlayers() {
@@ -62,8 +58,8 @@ public class Game {
     }
 
     public void roll(int rollingNumber) {
-        System.out.println(players.get(currentPlayer) + " is the current player");
-        System.out.println("They have rolled a " + rollingNumber);
+        logger.info(players.get(currentPlayer) + " is the current player");
+        logger.info("They have rolled a " + rollingNumber);
 
         if (inPenaltyBox[currentPlayer]) {
             if (rollingNumber % 2 != 0) {
@@ -86,10 +82,10 @@ public class Game {
         places[currentPlayer] = places[currentPlayer] + rollingNumber;
         if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 
-        System.out.println(players.get(currentPlayer)
+        logger.info(players.get(currentPlayer)
                 + "'s new location is "
                 + places[currentPlayer]);
-        System.out.println("The category is " + currentCategory());
+        logger.info("The category is " + currentCategory());
         askQuestion();
     }
 
@@ -132,9 +128,9 @@ public class Game {
     }
 
     private boolean currentPlayerGetsAGoldCoinAndSelectNextPlayer() {
-        System.out.println("Answer was correct!!!!");
+        logger.info("Answer was correct!!!!");
         purses[currentPlayer]++;
-        System.out.println(players.get(currentPlayer)
+        logger.info(players.get(currentPlayer)
                 + " now has "
                 + purses[currentPlayer]
                 + " Gold Coins.");
@@ -151,8 +147,8 @@ public class Game {
     }
 
     public boolean wrongAnswer() {
-        System.out.println("Question was incorrectly answered");
-        System.out.println(players.get(currentPlayer) + " was sent to the penalty box");
+        logger.info("Question was incorrectly answered");
+        logger.info(players.get(currentPlayer) + " was sent to the penalty box");
         inPenaltyBox[currentPlayer] = true;
 
         nextPlayer();
