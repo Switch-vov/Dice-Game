@@ -22,12 +22,11 @@ public class Game {
             popQuestions.addLast("Pop Question " + i);
             scienceQuestions.addLast(("Science Question " + i));
             sportsQuestions.addLast(("Sports Question " + i));
-            // TODO: inline method Game.createRockQuestion()
             rockQuestions.addLast("Rock Question " + i);
         }
     }
 
-    // TODO: The return value of method Game.add() is not used.
+    // TODO-later: The return value of method Game.add() is not used.
     public boolean add(String playerName) {
 
 
