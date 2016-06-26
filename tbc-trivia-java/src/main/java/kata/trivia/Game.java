@@ -41,8 +41,7 @@ public class Game {
         return true;
     }
 
-    // TODO: The method Game.howManyPlayers() should be private because it it only used by its own class Game
-    public int howManyPlayers() {
+    private int howManyPlayers() {
         return players.size();
     }
 
