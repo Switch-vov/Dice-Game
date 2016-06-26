@@ -169,7 +169,7 @@ public class Game {
         return true;
     }
 
-
+    // TODO: The name of the method Game.didPlayerWin() should be Game.isGameStillInProgress()
     private boolean didPlayerWin() {
         return !(purses[currentPlayer] == 6);
     }
