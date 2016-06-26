@@ -22,13 +22,9 @@ public class Game {
             popQuestions.addLast("Pop Question " + i);
             scienceQuestions.addLast(("Science Question " + i));
             sportsQuestions.addLast(("Sports Question " + i));
+            // TODO: inline method Game.createRockQuestion()
             rockQuestions.addLast("Rock Question " + i);
         }
-    }
-
-    // TODO: Remove the unused method Game.isPlayable()
-    public boolean isPlayable() {
-        return (howManyPlayers() >= 2);
     }
 
     // TODO: The return value of method Game.add() is not used.
