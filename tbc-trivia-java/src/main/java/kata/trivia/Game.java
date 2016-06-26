@@ -28,6 +28,7 @@ public class Game {
         }
     }
 
+    // TODO: Change method Game.createRockQuestion() to be private
     public String createRockQuestion(int index) {
         return "Rock Question " + index;
     }
