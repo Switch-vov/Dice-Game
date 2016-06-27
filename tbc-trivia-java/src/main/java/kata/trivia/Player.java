@@ -5,6 +5,7 @@ package kata.trivia;
  */
 public class Player {
     private String playerName;
+    private int place = 0;
 
     public Player(String playerName) {
         this.playerName = playerName;
@@ -16,6 +17,9 @@ public class Player {
     }
 
     public void moveForwardSteps(int steps) {
-
+        this.place += steps;
+        if(this.place > 11) {
+            this.place -= 12;
+        }
     }
 }
