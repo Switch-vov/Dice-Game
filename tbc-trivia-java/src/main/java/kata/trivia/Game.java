@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class Game {
+    // TODO: Move playerName, places and inPenaltyBox to new class Player
     private ArrayList players = new ArrayList();
     private int[] places = new int[6];
     private int[] purses = new int[6];
