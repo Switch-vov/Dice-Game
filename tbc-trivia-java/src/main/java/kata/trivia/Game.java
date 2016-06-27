@@ -142,6 +142,7 @@ public class Game {
         return true;
     }
 
+    // TODO: The magic number 6
     private boolean isGameStillInProgress() {
         return !(purses[currentPlayer] == 6);
     }
