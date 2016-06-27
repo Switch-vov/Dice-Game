@@ -8,8 +8,7 @@ import java.util.logging.SimpleFormatter;
 
 public class Game {
     private final QuestionMaker questionMaker = new QuestionMaker();
-    // TODO: Make player list type-safe
-    private ArrayList players = new ArrayList();
+    private ArrayList<Player> players = new ArrayList<Player>();
     // TODO-working-on: Move places into class Player
     private int[] places = new int[6];
 
@@ -77,9 +76,9 @@ public class Game {
     }
 
     private void currentPlayerMovesToNewPlaceAnswersAQuestion(int rollingNumber) {
-        places[currentPlayer] = places[currentPlayer] + rollingNumber;
+        places[currentPlayer] += rollingNumber;
         players.get(currentPlayer).moveForwardSteps(rollingNumber);
-        if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+        if (places[currentPlayer] > 11) places[currentPlayer] -= 12;
 
         logger.info(players.get(currentPlayer)
                 + "'s new location is "
