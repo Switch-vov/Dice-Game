@@ -87,9 +87,42 @@ public class GameTest {
         assertEquals("Pop Question 1", questionMaker.removeFirstPopQuestion());
     }
 
-    // TODO: add two science questions and could remove the first one
+    @Test
+    public void add_two_science_questions_and_could_remove_the_first_one() {
+        // Arrange
+        QuestionMaker questionMaker = new QuestionMaker();
 
-    // TODO: add two sports questions and could remove the first one
+        // Act
+        questionMaker.addScienceQuestions("Science Question 1");
+        questionMaker.addScienceQuestions("Science Question 2");
 
-    // TODO: add two rock questions and could remove the first one
+        // Assert
+        assertEquals("Science Question 1", questionMaker.removeFirstScienceQuestion());
+    }
+
+    @Test
+    public void add_two_sports_questions_and_could_remove_the_first_one() {
+        // Arrange
+        QuestionMaker questionMaker = new QuestionMaker();
+
+        // Act
+        questionMaker.addSportsQuestions("Sports Question 1");
+        questionMaker.addSportsQuestions("Sports Question 2");
+
+        // Assert
+        assertEquals("Sports Question 1", questionMaker.removeFirstSportsQuestion());
+    }
+
+    @Test
+    public void add_two_rock_questions_and_could_remove_the_first_one() {
+        // Arrange
+        QuestionMaker questionMaker = new QuestionMaker();
+
+        // Act
+        questionMaker.addRockQuestions("Rock Question 1");
+        questionMaker.addRockQuestions("Rock Question 2");
+
+        // Assert
+        assertEquals("Rock Question 1", questionMaker.removeFirstRockQuestion());
+    }
 }
