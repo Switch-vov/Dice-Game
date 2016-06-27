@@ -36,7 +36,6 @@ public class Game {
     }
 
     public void add(String playerName) {
-        // TODO: Move playerName into class Player
         players.add(new Player(playerName));
 
         logger.info(playerName + " was added");
@@ -87,8 +86,7 @@ public class Game {
             logger.info(questionMaker.removeFirstRockQuestion());
     }
 
-    // TODO-later: The name of method Game.wasCorrectlyAnswered() should be Game.answeredCorrectly()
-    public boolean wasCorrectlyAnswered() {
+    public boolean answeredCorrectly() {
         if (players.get(currentPlayer).isInPenaltyBox()) {
             nextPlayer();
             boolean theGameIsStillInProgress = true;
@@ -100,6 +98,7 @@ public class Game {
     private boolean currentPlayerGetsAGoldCoinAndSelectNextPlayer() {
         logger.info("Answer was correct!!!!");
         players.get(currentPlayer).winAGoldCoin();
+
         logger.info(players.get(currentPlayer)
                 + " now has "
                 + players.get(currentPlayer).countGoldCoins()
@@ -116,8 +115,7 @@ public class Game {
         if (currentPlayer == players.size()) currentPlayer = 0;
     }
 
-    // TODO-later: The name of method Game.wrongAnswer() should be Game.answeredWrong()
-    public boolean wrongAnswer() {
+    public boolean answeredWrong() {
         logger.info("Question was incorrectly answered");
         logger.info(players.get(currentPlayer) + " was sent to the penalty box");
         players.get(currentPlayer).sentToPenaltyBox();
