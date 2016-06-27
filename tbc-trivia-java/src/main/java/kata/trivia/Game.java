@@ -65,13 +65,11 @@ public class Game {
                 currentPlayerMovesToNewPlaceAnswersAQuestion(rollingNumber);
             } else {
                 logger.info(players.get(currentPlayer) + " is not getting out of the penalty box");
-                players.get(currentPlayer).stayInPenaltyBox();
+                players.get(currentPlayer).sentToPenaltyBox();
             }
-
         } else {
             currentPlayerMovesToNewPlaceAnswersAQuestion(rollingNumber);
         }
-
     }
 
     private void currentPlayerMovesToNewPlaceAnswersAQuestion(int rollingNumber) {
