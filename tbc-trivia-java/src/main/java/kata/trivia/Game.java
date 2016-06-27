@@ -10,7 +10,6 @@ public class Game {
     public static final int NUMBER_OF_GOLD_COINS_TO_WON_AND_GAME_OVER = 6;
     public static final int MAX_NUMBER_OF_BYTES_WRITING_TO_ONE_FILE = 10000000;
     public static final int NUMBER_OF_FILES_TO_USE = 1;
-    public static final int MAX_NUMBER_OF_QUESTIONS = 50;
 
     private final QuestionMaker questionMaker = new QuestionMaker();
     private ArrayList<Player> players = new ArrayList<Player>();
@@ -22,16 +21,6 @@ public class Game {
 
     public Game() {
         logToAFile();
-        prepareQuestions();
-    }
-
-    private void prepareQuestions() {
-        for (int i = 0; i < MAX_NUMBER_OF_QUESTIONS; i++) {
-            questionMaker.addPopQuestions("Pop Question " + i);
-            questionMaker.addScienceQuestions(("Science Question " + i));
-            questionMaker.addSportsQuestions(("Sports Question " + i));
-            questionMaker.addRockQuestions("Rock Question " + i);
-        }
     }
 
     private void logToAFile() {
@@ -98,7 +87,7 @@ public class Game {
             logger.info(questionMaker.removeFirstRockQuestion());
     }
 
-
+    // TODO-later: The name of method Game.wasCorrectlyAnswered() should be Game.answeredCorrectly()
     public boolean wasCorrectlyAnswered() {
         if (players.get(currentPlayer).isInPenaltyBox()) {
             nextPlayer();
@@ -127,6 +116,7 @@ public class Game {
         if (currentPlayer == players.size()) currentPlayer = 0;
     }
 
+    // TODO-later: The name of method Game.wrongAnswer() should be Game.answeredWrong()
     public boolean wrongAnswer() {
         logger.info("Question was incorrectly answered");
         logger.info(players.get(currentPlayer) + " was sent to the penalty box");
