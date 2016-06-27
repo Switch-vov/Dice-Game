@@ -77,8 +77,9 @@ public class Game {
 
     private void currentPlayerMovesToNewPlaceAnswersAQuestion(int rollingNumber) {
         places[currentPlayer] += rollingNumber;
-        players.get(currentPlayer).moveForwardSteps(rollingNumber);
         if (places[currentPlayer] > 11) places[currentPlayer] -= 12;
+
+        players.get(currentPlayer).moveForwardSteps(rollingNumber);
 
         logger.info(players.get(currentPlayer)
                 + "'s new location is "
