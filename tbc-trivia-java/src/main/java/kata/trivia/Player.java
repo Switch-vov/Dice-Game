@@ -39,4 +39,8 @@ public class Player {
         if (this.place == 10) return "Sports";
         return "Rock";
     }
+
+    public void winAGoldCoin() {
+
+    }
 }
