@@ -50,6 +50,8 @@ public class Game {
         inPenaltyBox[howManyPlayers()] = false;
 
         logger.info(playerName + " was added");
+
+        // TODO: The logging message should be 'The total amount of players is xx'
         logger.info("They are player number " + players.size());
     }
 
