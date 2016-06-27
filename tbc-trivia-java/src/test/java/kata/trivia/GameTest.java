@@ -151,7 +151,7 @@ public class GameTest {
     }
 
     @Test
-    public void the_category_should_be_Pop_if_the_player_is_in_place_0_or_4_or_8_steps() {
+    public void the_category_should_be_Pop_if_the_player_is_in_place_0_or_4_or_8() {
         // Arrange
         Player player = new Player("Ben");
         String category = "Pop";
@@ -168,7 +168,7 @@ public class GameTest {
     }
 
     @Test
-    public void the_category_should_be_Science_if_the_player_is_in_place_1_or_5_or_9_steps() {
+    public void the_category_should_be_Science_if_the_player_is_in_place_1_or_5_or_9() {
         // Arrange
         Player player = new Player("Ben");
         String category = "Science";
@@ -184,8 +184,38 @@ public class GameTest {
         assertEquals(category, player.getCurrentCategory());
     }
 
+    @Test
+    public void the_category_should_be_Sports_if_the_player_is_in_place_2_or_6_or_10() {
+        // Arrange
+        Player player = new Player("Ben");
+        String category = "Sports";
 
-    // TODO: the category should be Sport if the player is in place 2,6 or 10 steps
+        // Act, Assert
+        player.moveForwardSteps(2);
+        assertEquals(category, player.getCurrentCategory());
 
-    // TODO: the category should be Rock if the player is in place 3,7 or 11 steps
+        player.moveForwardSteps(4);
+        assertEquals(category, player.getCurrentCategory());
+
+        player.moveForwardSteps(4);
+        assertEquals(category, player.getCurrentCategory());
+    }
+
+    @Test
+    public void the_category_should_be_Rock_if_the_player_is_in_place_3_or7_or_11() {
+        // Arrange
+        Player player = new Player("Ben");
+        String category = "Rock";
+
+        // Act, Assert
+        player.moveForwardSteps(3);
+        assertEquals(category, player.getCurrentCategory());
+
+        player.moveForwardSteps(4);
+        assertEquals(category, player.getCurrentCategory());
+
+        player.moveForwardSteps(4);
+        assertEquals(category, player.getCurrentCategory());
+    }
+
 }
