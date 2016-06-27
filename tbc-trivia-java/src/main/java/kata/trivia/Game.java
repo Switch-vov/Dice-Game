@@ -53,15 +53,17 @@ public class Game {
         logger.info(players.get(currentPlayer) + " is the current player");
         logger.info("They have rolled a " + rollingNumber);
 
-        if (inPenaltyBox[currentPlayer]) {
+        if (inPenaltyBox[currentPlayer] || players.get(currentPlayer).isInPenaltyBox()) {
             if (rollingNumber % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
+                players.get(currentPlayer).getOutOfPenaltyBox();
 
-                System.out.println(players.get(currentPlayer) + " is getting out of the penalty box");
+                logger.info(players.get(currentPlayer) + " is getting out of the penalty box");
                 currentPlayerMovesToNewPlaceAnswersAQuestion(rollingNumber);
             } else {
-                System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
+                logger.info(players.get(currentPlayer) + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
+                players.get(currentPlayer).stayInPenaltyBox();
             }
 
         } else {
