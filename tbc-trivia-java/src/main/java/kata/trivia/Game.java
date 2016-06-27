@@ -79,34 +79,21 @@ public class Game {
         logger.info(players.get(currentPlayer)
                 + "'s new location is "
                 + players.get(currentPlayer).getPlace());
-        logger.info("The category is " + currentCategory());
+        logger.info("The category is " + players.get(currentPlayer).getCurrentCategory());
         askQuestion();
     }
 
     private void askQuestion() {
-        if (currentCategory() == "Pop")
+        if (players.get(currentPlayer).getCurrentCategory() == "Pop")
             logger.info(questionMaker.removeFirstPopQuestion());
-        if (currentCategory() == "Science")
+        if (players.get(currentPlayer).getCurrentCategory() == "Science")
             logger.info(questionMaker.removeFirstScienceQuestion());
-        if (currentCategory() == "Sports")
+        if (players.get(currentPlayer).getCurrentCategory() == "Sports")
             logger.info(questionMaker.removeFirstSportsQuestion());
-        if (currentCategory() == "Rock")
+        if (players.get(currentPlayer).getCurrentCategory() == "Rock")
             logger.info(questionMaker.removeFirstRockQuestion());
     }
 
-    // TODO: Move method Game.currentCategory() to class Player
-    private String currentCategory() {
-        if (players.get(currentPlayer).getPlace() == 0) return "Pop";
-        if (players.get(currentPlayer).getPlace() == 4) return "Pop";
-        if (players.get(currentPlayer).getPlace() == 8) return "Pop";
-        if (players.get(currentPlayer).getPlace() == 1) return "Science";
-        if (players.get(currentPlayer).getPlace() == 5) return "Science";
-        if (players.get(currentPlayer).getPlace() == 9) return "Science";
-        if (players.get(currentPlayer).getPlace() == 2) return "Sports";
-        if (players.get(currentPlayer).getPlace() == 6) return "Sports";
-        if (players.get(currentPlayer).getPlace() == 10) return "Sports";
-        return "Rock";
-    }
 
     public boolean wasCorrectlyAnswered() {
         if (inPenaltyBox[currentPlayer]) {
