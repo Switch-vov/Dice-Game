@@ -6,12 +6,10 @@ import java.util.LinkedList;
  * Created by Switch on 2016-06-27.
  */
 public class QuestionMaker {
-    // TODO-working-on: Move question lists to a new class QuestionMaker
-    // TODO: Make question lists type-safe
-    private LinkedList popQuestions = new LinkedList();
-    private LinkedList scienceQuestions = new LinkedList();
-    private LinkedList sportsQuestions = new LinkedList();
-    private LinkedList rockQuestions = new LinkedList();
+    private LinkedList<String> popQuestions = new LinkedList<String>();
+    private LinkedList<String> scienceQuestions = new LinkedList<String>();
+    private LinkedList<String> sportsQuestions = new LinkedList<String>();
+    private LinkedList<String> rockQuestions = new LinkedList<String>();
 
     public void addPopQuestions(String popQuestion) {
         popQuestions.add(popQuestion);
@@ -30,18 +28,18 @@ public class QuestionMaker {
     }
 
     public String removeFirstPopQuestion() {
-        return popQuestions.removeFirst().toString();
+        return popQuestions.removeFirst();
     }
 
     public String removeFirstScienceQuestion() {
-        return scienceQuestions.removeFirst().toString();
+        return scienceQuestions.removeFirst();
     }
 
     public String removeFirstSportsQuestion() {
-        return sportsQuestions.removeFirst().toString();
+        return sportsQuestions.removeFirst();
     }
 
     public String removeFirstRockQuestion() {
-        return rockQuestions.removeFirst().toString();
+        return rockQuestions.removeFirst();
     }
 }
