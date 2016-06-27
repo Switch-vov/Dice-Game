@@ -16,12 +16,6 @@ public class Game {
     private int[] purses = new int[6];
     private boolean[] inPenaltyBox = new boolean[6];
 
-    // TODO-working-on: Move question lists to a new class QuestionMaker
-    private LinkedList popQuestions = new LinkedList();
-    private LinkedList scienceQuestions = new LinkedList();
-    private LinkedList sportsQuestions = new LinkedList();
-    private LinkedList rockQuestions = new LinkedList();
-
     private int currentPlayer = 0;
     private boolean isGettingOutOfPenaltyBox;
 
@@ -38,10 +32,10 @@ public class Game {
         logger.addHandler(fileHandler);
 
         for (int i = 0; i < 50; i++) {
-            popQuestions.addLast("Pop Question " + i);
-            scienceQuestions.addLast(("Science Question " + i));
-            sportsQuestions.addLast(("Sports Question " + i));
-            rockQuestions.addLast("Rock Question " + i);
+            questionMaker.addPopQuestions("Pop Question " + i);
+            questionMaker.addScienceQuestions(("Science Question " + i));
+            questionMaker.addSportsQuestions(("Sports Question " + i));
+            questionMaker.addRockQuestions("Rock Question " + i);
         }
     }
 
