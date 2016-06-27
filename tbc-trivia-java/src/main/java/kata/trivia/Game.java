@@ -51,8 +51,7 @@ public class Game {
 
         logger.info(playerName + " was added");
 
-        // TODO: The logging message should be 'The total amount of players is xx'
-        logger.info("They are player number " + players.size());
+        logger.info("The total amount of players is " + players.size());
     }
 
     private int howManyPlayers() {
