@@ -12,6 +12,7 @@ import java.util.logging.SimpleFormatter;
 public class Game {
     private final QuestionMaker questionMaker = new QuestionMaker();
     // TODO: Move playerName, places and inPenaltyBox to new class Player
+    // TODO: Make player list type-safe
     private ArrayList players = new ArrayList();
     private int[] places = new int[6];
     private int[] purses = new int[6];
@@ -88,13 +89,13 @@ public class Game {
 
     private void askQuestion() {
         if (currentCategory() == "Pop")
-            System.out.println(popQuestions.removeFirst());
+            logger.info(questionMaker.removeFirstPopQuestion());
         if (currentCategory() == "Science")
-            System.out.println(scienceQuestions.removeFirst());
+            logger.info(questionMaker.removeFirstScienceQuestion());
         if (currentCategory() == "Sports")
-            System.out.println(sportsQuestions.removeFirst());
+            logger.info(questionMaker.removeFirstSportsQuestion());
         if (currentCategory() == "Rock")
-            System.out.println(rockQuestions.removeFirst());
+            logger.info(questionMaker.removeFirstRockQuestion());
     }
 
 
