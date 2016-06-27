@@ -10,7 +10,7 @@ public class Game {
     private final QuestionMaker questionMaker = new QuestionMaker();
     // TODO: Make player list type-safe
     private ArrayList players = new ArrayList();
-    // TODO: Move places into class Player
+    // TODO-working-on: Move places into class Player
     private int[] places = new int[6];
 
     // TODO: Move purses into class Player
@@ -45,9 +45,6 @@ public class Game {
     public void add(String playerName) {
         // TODO: Move playerName into class Player
         players.add(new Player(playerName));
-        places[howManyPlayers()] = 0;
-        purses[howManyPlayers()] = 0;
-        inPenaltyBox[howManyPlayers()] = false;
 
         logger.info(playerName + " was added");
 
