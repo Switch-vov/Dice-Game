@@ -111,6 +111,7 @@ public class Game {
     private boolean currentPlayerGetsAGoldCoinAndSelectNextPlayer() {
         logger.info("Answer was correct!!!!");
         purses[currentPlayer]++;
+        players.get(currentPlayer).winAGoldCoin();
         logger.info(players.get(currentPlayer)
                 + " now has "
                 + purses[currentPlayer]
